@@ -166,8 +166,8 @@
   display: flex;
   gap: 6px;
   flex-shrink: 0;
-  flex-wrap: wrap;
-  max-width: 150px;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .badge {
@@ -739,8 +739,9 @@
   }
 
   .ticket-badges {
-    flex-direction: column;
+    flex-direction: row;
     gap: 4px;
+    flex-wrap: nowrap;
   }
 
   .badge {

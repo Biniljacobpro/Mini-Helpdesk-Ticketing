@@ -256,7 +256,7 @@ const Tickets = () => {
                 <p className="ticket-description">{ticket.description}</p>
                 
                 <div className="ticket-footer">
-                  <span className="ticket-category">{ticket.category}</span>
+                  <span className="ticket-category">Category: {ticket.category}</span>
                   <span className="ticket-date">{formatDate(ticket.createdAt)}</span>
                 </div>
 
