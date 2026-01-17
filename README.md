@@ -2,6 +2,10 @@
 
 A secure, full-stack helpdesk ticketing application built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring JWT authentication and comprehensive ticket management.
 
+## 🌐 Live Demo
+
+**Hosted on Vercel:** [https://mini-helpdesk-ticketing.vercel.app/](https://mini-helpdesk-ticketing.vercel.app/)
+
 ## 📋 Table of Contents
 
 - [Tech Stack](#tech-stack)
