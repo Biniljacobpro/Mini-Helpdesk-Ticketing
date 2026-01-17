@@ -67,6 +67,12 @@ const Signup = () => {
       return false;
     }
 
+    // Check if email contains uppercase letters
+    if (/[A-Z]/.test(emailValue)) {
+      setEmailError('Email must be in lowercase only');
+      return false;
+    }
+
     // Simple and effective regex validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     if (!emailRegex.test(emailValue)) {

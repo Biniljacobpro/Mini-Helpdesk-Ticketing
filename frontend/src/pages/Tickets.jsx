@@ -58,8 +58,8 @@ const Tickets = () => {
       return;
     }
 
-    if (formData.title.length > 100) {
-      setFormError('Title must not exceed 100 characters');
+    if (formData.title.length > 30) {
+      setFormError('Title must not exceed 30 characters');
       return;
     }
 
@@ -68,8 +68,8 @@ const Tickets = () => {
       return;
     }
 
-    if (formData.description.length > 500) {
-      setFormError('Description must not exceed 500 characters');
+    if (formData.description.length > 200) {
+      setFormError('Description must not exceed 200 characters');
       return;
     }
 
@@ -239,6 +239,7 @@ const Tickets = () => {
                 key={ticket._id} 
                 className="ticket-card"
                 onClick={() => setSelectedTicket(ticket)}
+                title="Click to view full details"
               >
                 <div className="ticket-header">
                   <h3 className="ticket-title">{ticket.title}</h3>
@@ -264,6 +265,7 @@ const Tickets = () => {
                     <button 
                       onClick={() => handleUpdateStatus(ticket._id, 'Closed')}
                       className="btn-action btn-close"
+                      title="Mark this ticket as closed"
                     >
                       Close Ticket
                     </button>
@@ -271,6 +273,7 @@ const Tickets = () => {
                     <button 
                       onClick={() => handleUpdateStatus(ticket._id, 'Open')}
                       className="btn-action btn-reopen"
+                      title="Reopen this closed ticket"
                     >
                       Reopen Ticket
                     </button>
@@ -303,7 +306,7 @@ const Tickets = () => {
                 <label htmlFor="title">
                   Title * 
                   <span className="char-counter">
-                    {formData.title.length}/100
+                    {formData.title.length}/30
                   </span>
                 </label>
                 <input
@@ -311,8 +314,8 @@ const Tickets = () => {
                   id="title"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  placeholder="Brief description of the issue (5-100 chars)"
-                  maxLength={100}
+                  placeholder="Brief description of the issue (5-30 chars)"
+                  maxLength={30}
                   required
                 />
               </div>
@@ -321,15 +324,15 @@ const Tickets = () => {
                 <label htmlFor="description">
                   Description * 
                   <span className="char-counter">
-                    {formData.description.length}/500
+                    {formData.description.length}/200
                   </span>
                 </label>
                 <textarea
                   id="description"
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  placeholder="Detailed description of the issue (15-500 chars)"
-                  maxLength={500}
+                  placeholder="Detailed description of the issue (15-200 chars)"
+                  maxLength={200}
                   required
                 />
               </div>
