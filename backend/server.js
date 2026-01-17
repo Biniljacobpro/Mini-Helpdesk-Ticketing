@@ -8,8 +8,8 @@ import ticketRoutes from './routes/ticketRoutes.js';
 // Load environment variables
 dotenv.config();
 
-// Connect to MongoDB
-connectDB();
+// Connect to MongoDB (non-blocking for serverless)
+connectDB().catch(err => console.error('MongoDB connection failed:', err));
 
 // Initialize Express app
 const app = express();
